@@ -1,20 +1,389 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "image_banner": {
       "type": "image-banner",
       "blocks": {
-        "heading": {
-          "type": "heading",
+        "text_custom_zYtYxi": {
+          "type": "text_custom",
           "settings": {
-            "heading": "Browse our latest products",
-            "heading_size": "h0"
+            "text": "<h1><strong>Your unique blend for optimal health and wellness.</strong></h1>",
+            "type": "",
+            "text_alignment": "left",
+            "max_width": 626,
+            "text_alignment_mobile": "center",
+            "text_normal_state_color": "#000000",
+            "text_hover_state_color": "#000000",
+            "text_normal_state_color_mobile": "#000000",
+            "text_hover_state_color_mobile": "#000000",
+            "margin_bottom": 8,
+            "margin_top": 0,
+            "margin_bottom_mobile": 8,
+            "margin_top_mobile": 8
           }
         },
         "button": {
           "type": "buttons",
           "settings": {
-            "button_label_1": "Shop all",
+            "button_label_1": "<strong>Take a quiz - it’s free</strong>",
             "button_link_1": "shopify://collections/all",
+            "button_style": "first",
+            "background_color": "#000000",
+            "text_color": "#eaf586",
+            "button_style_secondary_1": true,
+            "button_label_2": "",
+            "button_link_2": "",
+            "button_style_secondary_2": false
+          }
+        },
+        "icon_with_text_QGNrtb": {
+          "type": "icon_with_text",
+          "settings": {
+            "icon": "gift",
+            "title": "<h3><strong>Your Supplement Quiz</strong></h3>",
+            "title_padding_left": 0,
+            "paragraph": "<p>Discover tailored results just for you in our quick 2-minute free quiz!</p>",
+            "paragraph_padding_left_desktop": 0,
+            "paragraph_padding_left_tablet": 0,
+            "paragraph_padding_left_mobile": 0,
+            "paragraph_padding_left": 18,
+            "max_width": 352,
+            "icon_position": "flex-start",
+            "text_alignment": "left",
+            "title_color": "",
+            "paragraph_color": ""
+          }
+        },
+        "icon_with_text_F8XYjg": {
+          "type": "icon_with_text",
+          "settings": {
+            "icon": "chat",
+            "title": "<h3><strong>Customized Recommendations</strong></h3>",
+            "title_padding_left": 0,
+            "paragraph": "<p>Find your perfect supplements based on your unique needs and goals!</p>",
+            "paragraph_padding_left_desktop": 0,
+            "paragraph_padding_left_tablet": 0,
+            "paragraph_padding_left_mobile": 0,
+            "paragraph_padding_left": 0,
+            "max_width": 435,
+            "icon_position": "flex-start",
+            "text_alignment": "left",
+            "title_color": "",
+            "paragraph_color": ""
+          }
+        },
+        "icon_with_text_wMyyR8": {
+          "type": "icon_with_text",
+          "settings": {
+            "icon": "star",
+            "title": "<h3><strong>Building Habits</strong></h3>",
+            "title_padding_left": 0,
+            "paragraph": "<p>Embark on your path to better health with expert guidance every step of the way</p>",
+            "paragraph_padding_left_desktop": 0,
+            "paragraph_padding_left_tablet": 0,
+            "paragraph_padding_left_mobile": 0,
+            "paragraph_padding_left": 0,
+            "max_width": 370,
+            "icon_position": "flex-start",
+            "text_alignment": "left",
+            "title_color": "",
+            "paragraph_color": ""
+          }
+        },
+        "additional_image_3hyn77": {
+          "type": "additional_image",
+          "settings": {
+            "image": "shopify://shop_images/unsplash__H1ZmUzwp9w.png",
+            "margin_left": 0,
+            "margin_right": 0,
+            "margin_left_mobile": 6,
+            "margin_right_mobile": 0
+          }
+        },
+        "additional_image_zBnzgC": {
+          "type": "additional_image",
+          "settings": {
+            "image": "shopify://shop_images/image_666.png",
+            "margin_left": 6,
+            "margin_right": 0,
+            "margin_left_mobile": 6,
+            "margin_right_mobile": 6
+          }
+        }
+      },
+      "block_order": [
+        "text_custom_zYtYxi",
+        "button",
+        "icon_with_text_QGNrtb",
+        "icon_with_text_F8XYjg",
+        "icon_with_text_wMyyR8",
+        "additional_image_3hyn77",
+        "additional_image_zBnzgC"
+      ],
+      "settings": {
+        "image": "shopify://shop_images/af3dd6b444b32e33b1f6e10e687a76e2.png",
+        "background": "",
+        "image_overlay_opacity": 0,
+        "image_opacity": 0.3,
+        "image_border_radius": 0,
+        "force_page_width": false,
+        "image_height": "small",
+        "desktop_content_position": "middle-left",
+        "show_text_box": false,
+        "desktop_content_alignment": "left",
+        "color_scheme": "scheme-3",
+        "content_max_width": 626,
+        "image_behavior": "none",
+        "mobile_content_alignment": "center",
+        "stack_images_on_mobile": false,
+        "show_text_below": false,
+        "padding_top": 0,
+        "padding_bottom": 60,
+        "padding_left": 32,
+        "padding_right": 0,
+        "padding_top_mobile": 200,
+        "padding_bottom_mobile": 32,
+        "padding_left_mobile": 24,
+        "padding_right_mobile": 24,
+        "margin_top": 0,
+        "margin_bottom": 0,
+        "margin_left": 0,
+        "margin_right": 0,
+        "margin_top_mobile": 0,
+        "margin_bottom_mobile": 0,
+        "margin_left_mobile": 0,
+        "margin_right_mobile": 0
+      }
+    },
+    "reviews_edGR3R": {
+      "type": "reviews",
+      "blocks": {
+        "text_wJ4z7T": {
+          "type": "text",
+          "settings": {
+            "text": "<p>#WOMEN TELL WOMEN</p>",
+            "type": "subhead",
+            "text_alignment": "center",
+            "text_alignment_mobile": "center",
+            "text_normal_state_color": "#000000",
+            "text_hover_state_color": "#000000",
+            "text_normal_state_color_mobile": "",
+            "text_hover_state_color_mobile": "",
+            "margin_bottom": 12,
+            "margin_top": 0,
+            "margin_bottom_mobile": 8,
+            "margin_top_mobile": 8
+          }
+        },
+        "text_QJH8pd": {
+          "type": "text",
+          "settings": {
+            "text": "<h2>Real people, real results</h2>",
+            "type": "",
+            "text_alignment": "center",
+            "text_alignment_mobile": "center",
+            "text_normal_state_color": "#000000",
+            "text_hover_state_color": "#000000",
+            "text_normal_state_color_mobile": "",
+            "text_hover_state_color_mobile": "",
+            "margin_bottom": 48,
+            "margin_top": 0,
+            "margin_bottom_mobile": 8,
+            "margin_top_mobile": 8
+          }
+        },
+        "reviews_container_kCp3Nc": {
+          "type": "reviews_container",
+          "settings": {
+            "alignment": "center",
+            "global_border_radius": 16,
+            "global_gap": 16,
+            "global_padding_top": 32,
+            "global_padding_bottom": 32,
+            "global_padding_left": 32,
+            "global_padding_right": 32,
+            "padding_top": 0,
+            "padding_bottom": 0,
+            "padding_left": 0,
+            "padding_right": 0
+          }
+        },
+        "review_RPdnDb": {
+          "type": "review",
+          "settings": {
+            "reviewer_image": "shopify://shop_images/c6e153d196d1885f635171d36a061dc5.png",
+            "image_position": "top",
+            "review_name": "<strong>~ Anna Smith</strong>",
+            "review_paragraph": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod nisi id enim pulvinar suscipit. Praesent pretium orci non velit bibendum,</p>",
+            "alignment": "left",
+            "number_stars": 3,
+            "tooth_offset": 32,
+            "background_color": "#F6F7D4",
+            "active_star_color": "#000000",
+            "inactive_star_color": "#a6a6a6",
+            "tooth_color": "#f6f7d4",
+            "review_name_font_size": 12,
+            "review_name_line_height": 14,
+            "max_width": 361,
+            "margin_bottom": 0,
+            "margin_top": 0,
+            "margin_left": 0,
+            "margin_right": 0
+          }
+        },
+        "review_Dt98FL": {
+          "type": "review",
+          "settings": {
+            "reviewer_image": "shopify://shop_images/c6e153d196d1885f635171d36a061dc5.png",
+            "image_position": "bottom",
+            "review_name": "<strong>~ Sara Jacob</strong>",
+            "review_paragraph": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod nisi id enim pulvinar suscipit. Praesent pretium orci non velit bibendum,</p>",
+            "alignment": "left",
+            "number_stars": 3,
+            "tooth_offset": 80,
+            "background_color": "#EDEDF5",
+            "active_star_color": "#000000",
+            "inactive_star_color": "#a6a6a6",
+            "tooth_color": "#fcf5ea",
+            "review_name_font_size": 12,
+            "review_name_line_height": 14,
+            "max_width": 409,
+            "margin_bottom": 0,
+            "margin_top": 0,
+            "margin_left": 0,
+            "margin_right": 0
+          }
+        },
+        "review_wAyMnn": {
+          "type": "review",
+          "settings": {
+            "reviewer_image": "shopify://shop_images/c6e153d196d1885f635171d36a061dc5.png",
+            "image_position": "top",
+            "review_name": "<strong>~ Lara Zoe</strong>",
+            "review_paragraph": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod nisi id enim pulvinar suscipit. Praesent pretium orci non velit bibendum,</p>",
+            "alignment": "left",
+            "number_stars": 3,
+            "tooth_offset": 32,
+            "background_color": "#FCF5EA",
+            "active_star_color": "#000000",
+            "inactive_star_color": "#a6a6a6",
+            "tooth_color": "#fcf5ea",
+            "review_name_font_size": 12,
+            "review_name_line_height": 14,
+            "max_width": 361,
+            "margin_bottom": 0,
+            "margin_top": 0,
+            "margin_left": 0,
+            "margin_right": 0
+          }
+        },
+        "review_q8NpX8": {
+          "type": "review",
+          "settings": {
+            "reviewer_image": "shopify://shop_images/c6e153d196d1885f635171d36a061dc5.png",
+            "image_position": "top",
+            "review_name": "<strong>~ Franklin Jackson </strong>",
+            "review_paragraph": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod nisi id enim pulvinar suscipit. Praesent pretium orci non velit bibendum,</p>",
+            "alignment": "left",
+            "number_stars": 3,
+            "tooth_offset": 32,
+            "background_color": "#FCF5EA",
+            "active_star_color": "#000000",
+            "inactive_star_color": "#a6a6a6",
+            "tooth_color": "#fcf5ea",
+            "review_name_font_size": 12,
+            "review_name_line_height": 14,
+            "max_width": 361,
+            "margin_bottom": 0,
+            "margin_top": 0,
+            "margin_left": 0,
+            "margin_right": 0
+          }
+        },
+        "review_cKxjmQ": {
+          "type": "review",
+          "settings": {
+            "reviewer_image": "shopify://shop_images/c6e153d196d1885f635171d36a061dc5.png",
+            "image_position": "bottom",
+            "review_name": "<strong>~ Jane Klien</strong>",
+            "review_paragraph": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod nisi id enim pulvinar suscipit. Praesent pretium orci non velit bibendum,</p>",
+            "alignment": "left",
+            "number_stars": 3,
+            "tooth_offset": 32,
+            "background_color": "#F6F7D4",
+            "active_star_color": "#000000",
+            "inactive_star_color": "#a6a6a6",
+            "tooth_color": "#fcf5ea",
+            "review_name_font_size": 12,
+            "review_name_line_height": 14,
+            "max_width": 361,
+            "margin_bottom": 0,
+            "margin_top": 0,
+            "margin_left": 0,
+            "margin_right": 0
+          }
+        }
+      },
+      "block_order": [
+        "text_wJ4z7T",
+        "text_QJH8pd",
+        "reviews_container_kCp3Nc",
+        "review_RPdnDb",
+        "review_Dt98FL",
+        "review_wAyMnn",
+        "review_q8NpX8",
+        "review_cKxjmQ"
+      ],
+      "settings": {
+        "layout_alignment": "center",
+        "background_color": "",
+        "padding_top": 120,
+        "padding_bottom": 120,
+        "padding_left": 60,
+        "padding_right": 60,
+        "padding_top_mobile": 60,
+        "padding_bottom_mobile": 60,
+        "padding_left_mobile": 24,
+        "padding_right_mobile": 24
+      }
+    },
+    "image_banner_DErxYD": {
+      "type": "image-banner",
+      "blocks": {
+        "text_custom_xhJhFA": {
+          "type": "text_custom",
+          "settings": {
+            "text": "<h2>Join the safe space of community!</h2>",
+            "type": "",
+            "text_alignment": "left",
+            "max_width": 626,
+            "text_alignment_mobile": "center",
+            "text_normal_state_color": "#000000",
+            "text_hover_state_color": "#000000",
+            "text_normal_state_color_mobile": "#000000",
+            "text_hover_state_color_mobile": "#121212",
+            "margin_bottom": 8,
+            "margin_top": 0,
+            "margin_bottom_mobile": 8,
+            "margin_top_mobile": 8
+          }
+        },
+        "buttons_9rKwgG": {
+          "type": "buttons",
+          "settings": {
+            "button_label_1": "<strong>Join today - it’s free </strong>",
+            "button_link_1": "shopify://collections/all",
+            "button_style": "second",
+            "background_color": "#EAF586",
+            "text_color": "#000000",
             "button_style_secondary_1": true,
             "button_label_2": "",
             "button_link_2": "",
@@ -23,53 +392,319 @@
         }
       },
       "block_order": [
-        "heading",
-        "button"
+        "text_custom_xhJhFA",
+        "buttons_9rKwgG"
       ],
       "settings": {
-        "image_overlay_opacity": 40,
-        "image_height": "large",
-        "desktop_content_position": "bottom-center",
+        "image": "shopify://shop_images/765b0a396912163c0b4347095a2da8e1.png",
+        "background": "linear-gradient(0,#fdf5e9,30%,#fdf5e9,31%,white)",
+        "image_overlay_opacity": 10,
+        "image_opacity": 1,
+        "image_border_radius": 16,
+        "force_page_width": true,
+        "image_height": "small",
+        "desktop_content_position": "top-left",
         "show_text_box": false,
-        "image_behavior": "none",
-        "desktop_content_alignment": "center",
+        "desktop_content_alignment": "left",
         "color_scheme": "scheme-3",
+        "content_max_width": 626,
+        "image_behavior": "none",
         "mobile_content_alignment": "center",
         "stack_images_on_mobile": false,
-        "show_text_below": false
+        "show_text_below": false,
+        "padding_top": 80,
+        "padding_bottom": 0,
+        "padding_left": 60,
+        "padding_right": 0,
+        "padding_top_mobile": 0,
+        "padding_bottom_mobile": 0,
+        "padding_left_mobile": 22,
+        "padding_right_mobile": 22,
+        "margin_top": 0,
+        "margin_bottom": 0,
+        "margin_left": 60,
+        "margin_right": 60,
+        "margin_top_mobile": 0,
+        "margin_bottom_mobile": 0,
+        "margin_left_mobile": 24,
+        "margin_right_mobile": 24
       }
     },
-    "featured_collection": {
-      "type": "featured-collection",
+    "slideshow_8dyE4y": {
+      "type": "slideshow",
+      "blocks": {
+        "slide_399Xcf": {
+          "type": "slide",
+          "settings": {
+            "background_color": "#fdf5e9",
+            "heading_logo": "shopify://shop_images/Vector.png",
+            "heading_logo_width_mobile": 80,
+            "heading_logo_width_desktop": 260,
+            "heading": "says",
+            "heading_size": "h1",
+            "subheading": "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.",
+            "button_label": "",
+            "link": "",
+            "button_style_secondary": false,
+            "box_align": "middle-center",
+            "show_text_box": true,
+            "text_alignment": "center",
+            "image_overlay_opacity": 0,
+            "color_scheme": "",
+            "text_alignment_mobile": "center"
+          }
+        },
+        "slide_3wHwzJ": {
+          "type": "slide",
+          "settings": {
+            "background_color": "#fcf5ea",
+            "heading_logo": "shopify://shop_images/Vector.png",
+            "heading_logo_width_mobile": 80,
+            "heading_logo_width_desktop": 260,
+            "heading": "says",
+            "heading_size": "h1",
+            "subheading": "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.",
+            "button_label": "",
+            "link": "",
+            "button_style_secondary": false,
+            "box_align": "middle-center",
+            "show_text_box": true,
+            "text_alignment": "center",
+            "image_overlay_opacity": 0,
+            "color_scheme": "scheme-1",
+            "text_alignment_mobile": "center"
+          }
+        },
+        "slide_fhBJKg": {
+          "type": "slide",
+          "settings": {
+            "background_color": "#fcf5ea",
+            "heading_logo": "shopify://shop_images/Vector.png",
+            "heading_logo_width_mobile": 80,
+            "heading_logo_width_desktop": 260,
+            "heading": "says",
+            "heading_size": "h1",
+            "subheading": "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.",
+            "button_label": "",
+            "link": "",
+            "button_style_secondary": false,
+            "box_align": "middle-center",
+            "show_text_box": true,
+            "text_alignment": "center",
+            "image_overlay_opacity": 0,
+            "color_scheme": "scheme-1",
+            "text_alignment_mobile": "center"
+          }
+        }
+      },
+      "block_order": [
+        "slide_399Xcf",
+        "slide_3wHwzJ",
+        "slide_fhBJKg"
+      ],
       "settings": {
-        "title": "Featured products",
-        "heading_size": "h2",
-        "description": "",
-        "show_description": false,
-        "description_style": "body",
-        "collection": "all",
-        "products_to_show": 8,
-        "columns_desktop": 4,
-        "color_scheme": "scheme-1",
-        "full_width": false,
-        "show_view_all": true,
-        "view_all_style": "solid",
-        "enable_desktop_slider": false,
-        "swipe_on_mobile": false,
-        "image_ratio": "adapt",
-        "image_shape": "default",
-        "show_secondary_image": true,
-        "show_vendor": false,
-        "show_rating": false,
-        "quick_add": "none",
-        "columns_mobile": "2",
-        "padding_top": 44,
-        "padding_bottom": 36
+        "background_color": "#fdf5e9",
+        "layout": "full_bleed",
+        "slide_height": "adapt_image",
+        "slider_visual": "dots",
+        "auto_rotate": false,
+        "change_slides_speed": 5,
+        "heading_fs_mobile": 18,
+        "heading_fs_desktop": 20,
+        "heading_gap": 16,
+        "quotes_width_mobile": 40,
+        "quotes_width_desktop": 40,
+        "image_behavior": "none",
+        "show_text_below": true,
+        "accessibility_info": "Slideshow about our brand"
+      }
+    },
+    "featured_blog_KANiAK": {
+      "type": "featured-blog",
+      "blocks": {
+        "text_WKxmHC": {
+          "type": "text",
+          "settings": {
+            "text": "<p>#EVIDENCE-BASED INFORMATION</p>",
+            "type": "subhead",
+            "text_alignment": "center",
+            "text_alignment_mobile": "center",
+            "text_normal_state_color": "#000000",
+            "text_hover_state_color": "#000000",
+            "text_normal_state_color_mobile": "#000000",
+            "text_hover_state_color_mobile": "#000000",
+            "margin_bottom": 12,
+            "margin_top": 0,
+            "margin_bottom_mobile": 12,
+            "margin_top_mobile": 0
+          }
+        },
+        "text_FGAAqD": {
+          "type": "text",
+          "settings": {
+            "text": "<h2>The Science of Wellness</h2>",
+            "type": "",
+            "text_alignment": "center",
+            "text_alignment_mobile": "center",
+            "text_normal_state_color": "#000000",
+            "text_hover_state_color": "#000000",
+            "text_normal_state_color_mobile": "#000000",
+            "text_hover_state_color_mobile": "#000000",
+            "margin_bottom": 48,
+            "margin_top": 0,
+            "margin_bottom_mobile": 32,
+            "margin_top_mobile": 0
+          }
+        },
+        "blog_posts_AAP8Hz": {
+          "type": "blog_posts",
+          "settings": {
+            "heading": "Blog posts",
+            "heading_size": "h1",
+            "blog": "",
+            "post_limit": 3,
+            "columns_desktop": 3,
+            "border_radius": 16,
+            "min_height": 496,
+            "min_height_mobile": 496,
+            "color_scheme": "scheme-1",
+            "show_image": true,
+            "show_date": true,
+            "show_author": false,
+            "show_view_all": true,
+            "padding_top": 0,
+            "padding_bottom": 0
+          }
+        },
+        "article_PMQmNV": {
+          "type": "article",
+          "settings": {
+            "article": "news/14-supplements-to-manage-your-cortisol-levels",
+            "title": "",
+            "read_time": "4 mins read",
+            "image_vertical_alignment": 50,
+            "image_horizontal_alignment": 15,
+            "image_vertical_alignment_mobile": 50,
+            "image_horizontal_alignment_mobile": 25,
+            "text_alignment_title": "left",
+            "text_alignment_read_time": "left",
+            "vertical_alignment": "flex-end",
+            "text_alignment_title_mobile": "left",
+            "text_alignment_read_time_mobile": "left",
+            "vertical_alignment_mobile": "flex-end",
+            "title_color": "#ffffff",
+            "read_time_color": "#ffffff",
+            "background_color": "linear-gradient(0deg, rgba(0, 0, 0, 0.4) 28.63%, rgba(0, 0, 0, 0) 100%),linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2))",
+            "title_color_mobile": "#ffffff",
+            "read_time_color_mobile": "#ffffff",
+            "background_color_mobile": "linear-gradient(0deg, rgba(0, 0, 0, 0.4) 28.63%, rgba(0, 0, 0, 0) 100%),linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2))",
+            "content_gap": 20,
+            "padding_top": 38,
+            "padding_bottom": 38,
+            "padding_left": 38,
+            "padding_right": 38,
+            "content_gap_mobile": 12,
+            "padding_top_mobile": 24,
+            "padding_bottom_mobile": 24,
+            "padding_left_mobile": 24,
+            "padding_right_mobile": 24
+          }
+        },
+        "article_7ChM8U": {
+          "type": "article",
+          "settings": {
+            "article": "news/what-are-the-best-vitamins-to-help-brain-fog-experts-explain",
+            "title": "",
+            "read_time": "7 mins read",
+            "image_vertical_alignment": 50,
+            "image_horizontal_alignment": 50,
+            "image_vertical_alignment_mobile": 50,
+            "image_horizontal_alignment_mobile": 50,
+            "text_alignment_title": "left",
+            "text_alignment_read_time": "left",
+            "vertical_alignment": "flex-end",
+            "text_alignment_title_mobile": "left",
+            "text_alignment_read_time_mobile": "left",
+            "vertical_alignment_mobile": "flex-end",
+            "title_color": "#ffffff",
+            "read_time_color": "#ffffff",
+            "background_color": "linear-gradient(0deg, rgba(0, 0, 0, 0.4) 28.63%, rgba(0, 0, 0, 0) 100%),linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2))",
+            "title_color_mobile": "#ffffff",
+            "read_time_color_mobile": "#ffffff",
+            "background_color_mobile": "linear-gradient(0deg, rgba(0, 0, 0, 0.4) 28.63%, rgba(0, 0, 0, 0) 100%),linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2))",
+            "content_gap": 20,
+            "padding_top": 38,
+            "padding_bottom": 38,
+            "padding_left": 38,
+            "padding_right": 38,
+            "content_gap_mobile": 12,
+            "padding_top_mobile": 24,
+            "padding_bottom_mobile": 24,
+            "padding_left_mobile": 24,
+            "padding_right_mobile": 24
+          }
+        },
+        "article_Cdbxxx": {
+          "type": "article",
+          "settings": {
+            "article": "news/the-ultimate-guide-to-superfoods-unlock-your-nutrition",
+            "title": "",
+            "read_time": "5 mins read",
+            "image_vertical_alignment": 50,
+            "image_horizontal_alignment": 50,
+            "image_vertical_alignment_mobile": 50,
+            "image_horizontal_alignment_mobile": 50,
+            "text_alignment_title": "left",
+            "text_alignment_read_time": "left",
+            "vertical_alignment": "flex-end",
+            "text_alignment_title_mobile": "left",
+            "text_alignment_read_time_mobile": "left",
+            "vertical_alignment_mobile": "flex-end",
+            "title_color": "#ffffff",
+            "read_time_color": "#ffffff",
+            "background_color": "linear-gradient(0deg, rgba(0, 0, 0, 0.4) 28.63%, rgba(0, 0, 0, 0) 100%),linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2))",
+            "title_color_mobile": "#ffffff",
+            "read_time_color_mobile": "#ffffff",
+            "background_color_mobile": "linear-gradient(0deg, rgba(0, 0, 0, 0.4) 28.63%, rgba(0, 0, 0, 0) 100%),linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2))",
+            "content_gap": 20,
+            "padding_top": 38,
+            "padding_bottom": 38,
+            "padding_left": 38,
+            "padding_right": 38,
+            "content_gap_mobile": 12,
+            "padding_top_mobile": 24,
+            "padding_bottom_mobile": 24,
+            "padding_left_mobile": 24,
+            "padding_right_mobile": 24
+          }
+        }
+      },
+      "block_order": [
+        "text_WKxmHC",
+        "text_FGAAqD",
+        "blog_posts_AAP8Hz",
+        "article_PMQmNV",
+        "article_7ChM8U",
+        "article_Cdbxxx"
+      ],
+      "settings": {
+        "background": "linear-gradient(180deg, rgba(253, 245, 233, 1), rgba(237, 237, 245, 1) 100%)",
+        "padding_top": 32,
+        "padding_bottom": 100,
+        "padding_left": 30,
+        "padding_right": 0,
+        "padding_top_mobile": 24,
+        "padding_bottom_mobile": 48,
+        "padding_left_mobile": 0,
+        "padding_right_mobile": 0
       }
     }
   },
   "order": [
     "image_banner",
-    "featured_collection"
+    "reviews_edGR3R",
+    "image_banner_DErxYD",
+    "slideshow_8dyE4y",
+    "featured_blog_KANiAK"
   ]
 }

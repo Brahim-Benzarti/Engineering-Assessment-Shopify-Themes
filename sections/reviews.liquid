@@ -1,0 +1,1025 @@
+{% liquid
+    assign reviews = section.blocks | where:"type","review"
+%}
+
+{% style %}
+    #shopify-section-{{ section.id }} {
+        --layout-alignment: {{ section.settings.layout_alignment }};
+        --padding-left: {{ section.settings.padding_left }}px;
+        --padding-right: {{ section.settings.padding_right }}px;
+        --padding-top: {{ section.settings.padding_top }}px;
+        --padding-bottom: {{ section.settings.padding_bottom }}px;
+        --background-color: {{ section.settings.background_color }};
+
+        background-color: var(--background-color);
+        display: flex;
+        flex-direction: column;
+        padding: var(--padding-top) var(--padding-right) var(--padding-bottom) var(--padding-left);
+
+    }
+
+    @media all and (max-width: 768px) {
+        #shopify-section-{{ section.id }} {
+            --padding-left: {{ section.settings.padding_left_mobile }}px;
+            --padding-right: {{ section.settings.padding_right_mobile }}px;
+            --padding-top: {{ section.settings.padding_top_mobile }}px;
+            --padding-bottom: {{ section.settings.padding_bottom_mobile }}px;
+        }
+    }
+{% endstyle %}
+
+{% for block in section.blocks %}
+    {% case block.type %}
+        {% when 'text' %}
+            {% render 'text-block', block:block %}
+        {% when 'reviews_container' %}
+            <div id="reviews-block-{{ block.id }}" {{ block.shopify_attributes }}>
+                {% style %}
+                    #reviews-block-{{ block.id }} {
+                        --layout-alignment: {{ block.settings.alignment }};
+                        --padding-left: {{ block.settings.padding_left }}px;
+                        --padding-right: {{ block.settings.padding_right }}px;
+                        --padding-top: {{ block.settings.padding_top }}px;
+                        --padding-bottom: {{ block.settings.padding_bottom }}px;
+
+                        display: grid; 
+                        grid-template-columns: auto auto auto auto; 
+                        grid-template-rows: auto auto; 
+                        gap: 24px 0; 
+                        grid-template-areas: 
+                        "card-1 card-2 card-2 card-3"
+                        "card-4 card-4 card-5 card-5"; 
+                 
+
+                        justify-content: var(--layout-alignment);
+                        padding-left: var(--padding-left);
+                        padding-right: var(--padding-right);
+                        padding-top: var(--padding-top);
+                        padding-bottom: var(--padding-bottom);
+
+                    }
+
+                    @media all and (max-width: 1050px) {
+                        #reviews-block-{{ block.id }} {
+                            display: flex;
+                            flex-direction: column;
+                            gap: 24px;
+                            align-items: center;
+                        }
+                        #reviews-block-{{ block.id }} .review {
+                            max-width: 500px;
+                            width: 100%;
+                        }
+                    }
+
+                    #reviews-block-{{ block.id }} .review {
+                        --global-border-radius: {{ block.settings.global_border_radius }}px;
+                        --global-gap: {{ block.settings.global_gap }}px;
+
+                        --global-padding-left: {{ block.settings.global_padding_left }}px;
+                        --global-padding-right: {{ block.settings.global_padding_right }}px;
+                        --global-padding-top: {{ block.settings.global_padding_top }}px;
+                        --global-padding-bottom: {{ block.settings.global_padding_bottom }}px;
+
+                        display: flex;
+                        flex-direction:column;
+                        gap: var(--global-gap);
+                        border-radius: var(--global-border-radius);
+                        padding: var(--global-padding-top) var(--global-padding-right) var(--global-padding-bottom) var(--global-padding-left);
+                        position: relative;
+                        height: fit-content;
+                        margin-left: 32px;
+                        margin-right: 32px;
+
+                    }
+                    #reviews-block-{{ block.id }} .review.top {
+                        margin-top: 49px;
+                    }
+                    #reviews-block-{{ block.id }} .review.bottom {
+                        margin-bottom: 49px;
+                    }
+
+                    @media all and (max-width: 1050px)  {
+                        #reviews-block-{{ block.id }} .review.bottom {
+                            margin-top: 49px;
+                            margin-bottom: 0px;
+                        } 
+                    }
+
+                    #reviews-block-{{ block.id }} .review:nth-child(4),
+                    #reviews-block-{{ block.id }} .review:nth-child(5) {
+                        margin-right: auto;
+                        margin-left: auto;
+                    }
+
+                    #reviews-block-{{ block.id }} .image--container {
+                        position: absolute;
+                        width: 98px;
+                        height: 98px;
+                        border-radius: 50%;
+                        overflow: hidden;
+                        z-index: 1;
+
+                    }
+
+                    #reviews-block-{{ block.id }} .image--container.top {
+                        bottom: calc(100% - 49px);
+                        right: var(--tooth-offset);
+                    }
+
+                    #reviews-block-{{ block.id }} .image--container.bottom {
+                        top: calc(100% - 49px);
+                        right: var(--tooth-offset);
+                    }
+
+                    @media all and (max-width: 1050px) {
+                        #reviews-block-{{ block.id }} .image--container {
+                            --tooth-offset: 32px;
+                        }
+                        #reviews-block-{{ block.id }} .image--container.bottom {
+                            top: unset;
+                            bottom: calc(100% - 49px);
+                            right: var(--tooth-offset);
+                        }
+
+                    }
+
+                    #reviews-block-{{ block.id }} .tooth--container {
+                        z-index: 1;
+                        position: absolute;
+                        bottom: -15px;
+                        left: -15px;
+                        
+                    }
+
+                    #reviews-block-{{ block.id }} .stars--container {
+                        display: flex;
+                        gap: 5px;
+                    }   
+                {% endstyle %}
+
+                {% for review in reviews %}
+                    {% liquid
+                        assign stars = review.settings.number_stars
+                        assign image_position = review.settings.image_position
+                        assign review_name = review.settings.review_name
+                        assign review_paragraph = review.settings.review_paragraph 
+                        assign tooth_color = review.settings.tooth_color
+                    %}
+                    <div id="review-block-{{ review.id }}" class="review {{ image_position }}" {{ review.shopify_attributes }}>
+                        {% style %}
+                            #review-block-{{ review.id }} {
+                                --max-width: {{ review.settings.max_width }}px;
+                                --text-alignment: {{ review.settings.alignment }};
+                                --background-color: {{ review.settings.background_color }};
+                                --star-active-color: {{ review.settings.active_star_color }};
+                                --star-inactive-color: {{ review.settings.inactive_star_color }};
+                                --margin-top: {{ review.settings.margin_top }}px;
+                                --margin-bottom: {{ review.settings.margin_bottom }}px;
+                                --margin-left: {{ review.settings.margin_left }}px;
+                                --margin-right: {{ review.settings.margin_right }}px;
+
+                                max-width: var(--max-width);
+                                text-align: var(--text-alignment);
+                                background-color: var(--background-color);
+                                margin-top: var(--margin-top);
+                                margin-bottom: var(--margin-bottom);
+                                margin-left: var(--margin-left);
+                                margin-right: var(--margin-right);
+                                grid-area: card-{{ forloop.index }};
+                            }
+
+                            #review-block-{{ review.id }} .stars--container svg.active {
+                                fill: var(--star-active-color);
+                            }
+
+                            #review-block-{{ review.id }} .stars--container svg {
+                                fill: var(--star-inactive-color);
+                            }
+
+                            #review-block-{{ review.id }} .reviewer--container {
+                                --font-size: {{ review.settings.review_name_font_size }}px;
+                                --line-height: {{ review.settings.review_name_line_height }}px;
+                                line-height: calc(var(--line-height) * var(--font-body-scale));
+                                font-size: calc(var(--font-size) * var(--font-body-scale));
+                            }
+
+                            #review-block-{{ review.id }} .image--container {
+                                --tooth-offset: {{ review.settings.tooth_offset }}px;
+                            }
+                            @media all and (max-width: 1050px) {
+                                #review-block-{{ review.id }} .image--container {
+                                    --tooth-offset: 8px;
+                                }
+                            }
+                        {% endstyle %}
+
+                        {% if review.settings.reviewer_image %}
+                            <div class="image--container {{ image_position }}">
+                                {{ review.settings.reviewer_image | image_url: width: 100, height: 100 | image_tag: loading: 'lazy' }}
+                            </div>
+                        {% endif %}
+
+                        <div class="stars--container">
+                            {% for i in (1..5) %}
+                                {% capture class %}
+                                    {% if i <= stars %}
+                                        active
+                                    {% endif %}
+                                {% endcapture %}
+                                {% render 'icon-star' class:class %}
+                            {% endfor %}
+                        </div>
+                        <div class="paragraph--container para">
+                            {{ review_paragraph }}
+                        </div>
+                        <div class="reviewer--container">
+                            {{ review_name }}
+                        </div>
+                        <div class="tooth--container">
+                            {% render 'icon-tooth' color:tooth_color %}
+                        </div>
+                    </div>
+                {% endfor %}
+                
+            </div>
+    {% endcase %}
+{% endfor %}
+
+{% schema %}
+{
+    "name": "Reviews",
+    "tag": "section",
+    "class": "page-width",
+    "settings": [
+        {
+            "type": "header",
+            "content": "Content"
+        },
+        {
+            "type": "header",
+            "content": "Alignment"
+        },
+        {
+            "type": "select",
+            "id": "layout_alignment",
+            "label": "alignment",
+            "default": "center",
+            "options": [
+                {
+                    "value": "left",
+                    "label": "left"
+                },
+                {
+                    "value": "center",
+                    "label": "center"
+                },
+                {
+                    "value": "right",
+                    "label": "right"
+                }
+            ]
+        },
+        {
+            "type": "header",
+            "content": "Color"
+        },
+        {
+            "type": "color_background",
+            "id": "background_color",
+            "label": "Background Color"
+        },
+        {
+            "type": "header",
+            "content": "Spacing (Desktop)"
+        },
+        {
+            "type": "range",
+            "id": "padding_top",
+            "label": "Padding Top",
+            "min": 0,
+            "max": 200,
+            "step": 2,
+            "unit": "px",
+            "default": 120
+        },
+        {
+            "type": "range",
+            "id": "padding_bottom",
+            "label": "Padding Bottom",
+            "min": 0,
+            "max": 200,
+            "step": 2,
+            "unit": "px",
+            "default": 120
+        },
+        {
+            "type": "range",
+            "id": "padding_left",
+            "label": "Padding Left",
+            "min": 0,
+            "max": 200,
+            "step": 2,
+            "unit": "px",
+            "default": 60
+        },
+        {
+            "type": "range",
+            "id": "padding_right",
+            "label": "Padding Right",
+            "min": 0,
+            "max": 200,
+            "step": 2,
+            "unit": "px",
+            "default": 60
+        },
+        {
+            "type": "header",
+            "content": "Spacing (Mobile)"
+        },
+        {
+            "type": "range",
+            "id": "padding_top_mobile",
+            "label": "Padding Top",
+            "min": 0,
+            "max": 200,
+            "step": 2,
+            "unit": "px",
+            "default": 120
+        },
+        {
+            "type": "range",
+            "id": "padding_bottom_mobile",
+            "label": "Padding Bottom",
+            "min": 0,
+            "max": 200,
+            "step": 2,
+            "unit": "px",
+            "default": 120
+        },
+        {
+            "type": "range",
+            "id": "padding_left_mobile",
+            "label": "Padding Left",
+            "min": 0,
+            "max": 200,
+            "step": 2,
+            "unit": "px",
+            "default": 60
+        },
+        {
+            "type": "range",
+            "id": "padding_right_mobile",
+            "label": "Padding Right",
+            "min": 0,
+            "max": 200,
+            "step": 2,
+            "unit": "px",
+            "default": 60
+        }
+    ],
+    "blocks": [
+        {
+            "name": "Text",
+            "type": "text",
+            "settings": [
+          {
+              "type": "richtext",
+              "id": "text",
+              "label": "Text"
+          },
+          {
+              "type": "header",
+              "content": "Controls"
+          },
+          {
+              "type": "select",
+              "id": "type",
+              "label": "Type",
+              "default": "",
+              "info": "Please choose 'normal' for headers.",
+              "options": [
+                  {
+                      "value": "",
+                      "label": "Normal"
+                  },
+                  {
+                      "value": "subhead",
+                      "label": "Subhead"
+                  },
+                  {
+                      "value": "para",
+                      "label": "Para"
+                  },
+                  {
+                      "value": "subtext",
+                      "label": "Subtext"
+                  }
+              ]
+          },
+          {
+            "type": "paragraph",
+            "content": "Desktop"
+          },
+          {
+              "type": "text_alignment",
+              "id": "text_alignment",
+              "label": "Text alignment",
+              "default": "center"
+          },
+          {
+            "type": "number",
+            "id": "max_width",
+            "label": "Max Width"
+          },
+          {
+            "type": "paragraph",
+            "content": "Mobile"
+          },
+          {
+              "type": "text_alignment",
+              "id": "text_alignment_mobile",
+              "label": "Text alignment",
+              "default": "center"
+          },
+          {
+            "type": "number",
+            "id": "max_width_mobile",
+            "label": "Max Width"
+          },
+          {
+              "type": "header",
+              "content": "Color"
+          },
+          {
+            "type": "paragraph",
+            "content": "Desktop"
+          },
+          {
+              "type": "color",
+              "id": "text_normal_state_color",
+              "label": "Normal state"
+          },
+          {
+              "type": "color",
+              "id": "text_hover_state_color",
+              "label": "Hover state"
+          },
+          {
+            "type": "paragraph",
+            "content": "Mobile"
+          },
+          {
+              "type": "color",
+              "id": "text_normal_state_color_mobile",
+              "label": "Normal state"
+          },
+          {
+              "type": "color",
+              "id": "text_hover_state_color_mobile",
+              "label": "Hover state"
+          },
+          {
+              "type": "header",
+              "content": "Spacing"
+          },
+          {
+            "type": "paragraph",
+            "content": "Desktop"
+          },
+          {
+              "type": "range",
+              "id": "margin_bottom",
+              "label": "Margin Bottom",
+              "min": 0,
+              "max": 100,
+              "step": 1,
+              "unit": "px",
+              "default": 8
+          },
+          {
+              "type": "range",
+              "id": "margin_top",
+              "label": "Margin Top",
+              "min": 0,
+              "max": 100,
+              "step": 1,
+              "unit": "px",
+              "default": 8
+          },
+          {
+            "type": "paragraph",
+            "content": "Mobile"
+          },
+          {
+              "type": "range",
+              "id": "margin_bottom_mobile",
+              "label": "Margin Bottom",
+              "min": 0,
+              "max": 100,
+              "step": 1,
+              "unit": "px",
+              "default": 8
+          },
+          {
+              "type": "range",
+              "id": "margin_top_mobile",
+              "label": "Margin Top",
+              "min": 0,
+              "max": 100,
+              "step": 1,
+              "unit": "px",
+              "default": 8
+          }
+      ]
+        },
+        {
+            "name": "Reviews Container",
+            "type": "reviews_container",
+            "limit": 1,
+            "settings": [
+                {
+                    "type": "header",
+                    "content": "Content"
+                },
+                {
+                    "type": "select",
+                    "id": "alignment",
+                    "label": "Alignment",
+                    "default": "center",
+                    "options": [
+                        {
+                            "value": "flex-start",
+                            "label": "Left"
+                        },
+                        {
+                            "value": "center",
+                            "label": "Center"
+                        },
+                        {
+                            "value": "flex-end",
+                            "label": "Right"
+                        }
+                    ]
+                },
+                {
+                    "type": "range",
+                    "id": "global_border_radius",
+                    "label": "Global Border Radius",
+                    "min": 0,
+                    "max": 50,
+                    "step": 1,
+                    "unit": "px",
+                    "default": 16
+                },
+                {
+                    "type": "header",
+                    "content": "Elements Global Spacing"
+                },
+                {
+                    "type": "range",
+                    "id": "global_gap",
+                    "label": "Global Gap",
+                    "min": 0,
+                    "max": 100,
+                    "step": 1,
+                    "unit": "px",
+                    "default": 16
+                },
+                {
+                    "type": "range",
+                    "id": "global_padding_top",
+                    "label": "Padding Top ",
+                    "min": 0,
+                    "max": 200,
+                    "step": 2,
+                    "unit": "px",
+                    "default": 32
+                },
+                {
+                    "type": "range",
+                    "id": "global_padding_bottom",
+                    "label": "Padding Bottom",
+                    "min": 0,
+                    "max": 200,
+                    "step": 2,
+                    "unit": "px",
+                    "default": 32
+                },
+                {
+                    "type": "range",
+                    "id": "global_padding_left",
+                    "label": "Padding Left",
+                    "min": 0,
+                    "max": 200,
+                    "step": 2,
+                    "unit": "px",
+                    "default": 32
+                },
+                {
+                    "type": "range",
+                    "id": "global_padding_right",
+                    "label": "Padding Right",
+                    "min": 0,
+                    "max": 200,
+                    "step": 2,
+                    "unit": "px",
+                    "default": 32
+                },
+                {
+                    "type": "header",
+                    "content": "Spacing"
+                },
+                {
+                    "type": "range",
+                    "id": "padding_top",
+                    "label": "Padding Top ",
+                    "min": 0,
+                    "max": 200,
+                    "step": 2,
+                    "unit": "px",
+                    "default": 0
+                },
+                {
+                    "type": "range",
+                    "id": "padding_bottom",
+                    "label": "Padding Bottom",
+                    "min": 0,
+                    "max": 200,
+                    "step": 2,
+                    "unit": "px",
+                    "default": 0
+                },
+                {
+                    "type": "range",
+                    "id": "padding_left",
+                    "label": "Padding Left",
+                    "min": 0,
+                    "max": 200,
+                    "step": 2,
+                    "unit": "px",
+                    "default": 0
+                },
+                {
+                    "type": "range",
+                    "id": "padding_right",
+                    "label": "Padding Right",
+                    "min": 0,
+                    "max": 200,
+                    "step": 2,
+                    "unit": "px",
+                    "default": 0
+                }
+            ]
+        },
+        {
+            "name": "Review",
+            "type": "review",
+            "settings": [
+                {
+                    "type": "header",
+                    "content": "Image Settings"
+                },
+                {
+                    "type": "image_picker",
+                    "id": "reviewer_image",
+                    "label": "Reviewer Image"
+                },
+                {
+                    "type": "select",
+                    "id": "image_position",
+                    "label": "Image Position",
+                    "default": "top",
+                    "info": "We can also achieve this using 2 ranges which dictate the 'left' & 'top' attributes",
+                    "options": [
+                        {
+                            "value": "top",
+                            "label": "Top"
+                        },
+                        {
+                            "value": "bottom",
+                            "label": "Bottom"
+                        }
+                    ]
+                },
+                {
+                    "type": "header",
+                    "content": "Text Settings"
+                },
+                {
+                    "type": "inline_richtext",
+                    "id": "review_name",
+                    "label": "Reviewer Name",
+                    "info": "Adding font size & line height settings for this since it is not pre-determined",
+                    "default": "~ Anna Smith"
+                },
+                {
+                    "type": "richtext",
+                    "id": "review_paragraph",
+                    "label": "Review paragraph",
+                    "default": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod nisi id enim pulvinar suscipit. Praesent pretium orci non velit bibendum,</p>"
+                },
+                {
+                    "type": "paragraph",
+                    "content": "Controls"
+                },
+                {
+                    "type": "text_alignment",
+                    "id": "alignment",
+                    "label": "Text alignment",
+                    "default": "left"
+                },
+                {
+                    "type": "header",
+                    "content": "Misc Settings"
+                },
+                {
+                    "type": "range",
+                    "id": "number_stars",
+                    "label": "Number Stars",
+                    "min": 1,
+                    "max": 5,
+                    "step": 1,
+                    "unit": "str",
+                    "default": 3
+                },
+                {
+                    "type": "range",
+                    "id": "tooth_offset",
+                    "label": "Tooth Offset",
+                    "min": 0,
+                    "max": 100,
+                    "step": 1,
+                    "unit": "px",
+                    "default": 32
+                },
+                {
+                    "type": "header",
+                    "content": "Color"
+                },
+                {
+                    "type": "color_background",
+                    "id": "background_color",
+                    "label": "Background color",
+                    "default": "#F6F7D4"
+                },
+                {
+                    "type": "color",
+                    "id": "active_star_color",
+                    "label": "Active star color",
+                    "default": "#000000"
+                },
+                {
+                    "type": "color",
+                    "id": "inactive_star_color",
+                    "label": "Inactive star color",
+                    "default": "#A6A6A6"
+                },
+                {
+                    "type": "color",
+                    "id": "tooth_color",
+                    "label": "Tooth color",
+                    "default": "#FCF5EA"
+                },
+                {
+                    "type": "header",
+                    "content": "Font (Review name)"
+                },
+                {
+                    "type": "range",
+                    "id": "review_name_font_size",
+                    "label": "Font size",
+                    "min": 8,
+                    "max": 72,
+                    "step": 1,
+                    "unit": "px",
+                    "default": 12
+                },
+                {
+                    "type": "range",
+                    "id": "review_name_line_height",
+                    "label": "Line height",
+                    "min": 0,
+                    "max": 100,
+                    "step": 1,
+                    "unit": "%",
+                    "default": 14
+                },
+                {
+                    "type": "header",
+                    "content": "Spacing"
+                },
+                {
+                    "type": "number",
+                    "id": "max_width",
+                    "label": "Max width",
+                    "default": 361
+                },
+                {
+                    "type": "range",
+                    "id": "margin_bottom",
+                    "label": "Margin Bottom",
+                    "min": 0,
+                    "max": 100,
+                    "step": 1,
+                    "unit": "px",
+                    "default": 8
+                },
+                {
+                    "type": "range",
+                    "id": "margin_top",
+                    "label": "Margin Bottom",
+                    "min": 0,
+                    "max": 100,
+                    "step": 1,
+                    "unit": "px",
+                    "default": 8
+                },
+                {
+                    "type": "range",
+                    "id": "margin_left",
+                    "label": "Margin Left",
+                    "min": 0,
+                    "max": 200,
+                    "step": 2,
+                    "unit": "px",
+                    "default": 32
+                },
+                {
+                    "type": "range",
+                    "id": "margin_right",
+                    "label": "Margin Right",
+                    "min": 0,
+                    "max": 200,
+                    "step": 2,
+                    "unit": "px",
+                    "default": 32
+                }
+
+            ]
+        }
+    ],
+    "presets": [
+        {
+            "name": "Reviews - Default",
+            "blocks": [ 
+            {
+                "type": "text",
+                "settings": {
+                    "text": "<p>#WOMEN TELL WOMEN</p>",
+                    "type": "subhead",
+                    "text_alignment": "center",
+                    "text_normal_state_color": "#000000",
+                    "text_hover_state_color": "#000000",
+                    "margin_bottom": 12,
+                    "margin_top": 0
+                }
+            },
+            {
+                "type": "text",
+                "settings": {
+                    "text": "<h2>Real people, real results</h2>",
+                    "type": "",
+                    "text_alignment": "center",
+                    "text_normal_state_color": "",
+                    "text_hover_state_color": "",
+                    "margin_bottom": 48,
+                    "margin_top": 0
+                }
+            },
+            {
+                "type": "reviews_container",
+                "settings": {
+                    "alignment": "center",
+                    "global_border_radius": 16,
+                    "global_gap": 16,
+                    "global_padding_top": 32,
+                    "global_padding_bottom": 32,
+                    "global_padding_left": 32,
+                    "global_padding_right": 32,
+                    "padding_top": 0,
+                    "padding_bottom": 0,
+                    "padding_left": 0,
+                    "padding_right": 0
+                }
+            },
+            {
+                "type": "review",
+                "settings": {
+                    "reviewer_image": "shopify://shop_images/c6e153d196d1885f635171d36a061dc5.png",
+                    "image_position": "top",
+                    "review_name": "<strong>~ Anna Smith</strong>",
+                    "review_paragraph": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod nisi id enim pulvinar suscipit. Praesent pretium orci non velit bibendum,</p>",
+                    "alignment": "left",
+                    "number_stars": 3,
+                    "tooth_offset": 32,
+                    "background_color": "#F6F7D4",
+                    "active_star_color": "#000000",
+                    "inactive_star_color": "#a6a6a6",
+                    "tooth_color": "#f6f7d4",
+                    "review_name_font_size": 12,
+                    "review_name_line_height": 14,
+                    "max_width": 361,
+                    "margin_bottom": 0,
+                    "margin_top": 50,
+                    "margin_left": 0,
+                    "margin_right": 32
+                }
+            },
+            {   
+                "type": "review",
+                "settings": {
+                    "reviewer_image": "shopify://shop_images/c6e153d196d1885f635171d36a061dc5.png",
+                    "image_position": "bottom",
+                    "review_name": "<strong>~ Sara Jacob</strong>",
+                    "review_paragraph": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod nisi id enim pulvinar suscipit. Praesent pretium orci non velit bibendum,</p>",
+                    "alignment": "left",
+                    "number_stars": 3,
+                    "tooth_offset": 80,
+                    "background_color": "#EDEDF5",
+                    "active_star_color": "#000000",
+                    "inactive_star_color": "#a6a6a6",
+                    "tooth_color": "#fcf5ea",
+                    "review_name_font_size": 12,
+                    "review_name_line_height": 14,
+                    "max_width": 409,
+                    "margin_bottom": 0,
+                    "margin_top": 0,
+                    "margin_left": 32,
+                    "margin_right": 32
+                }
+            },
+            {
+                "type": "review",
+                "settings": {
+                    "reviewer_image": "shopify://shop_images/c6e153d196d1885f635171d36a061dc5.png",
+                    "image_position": "top",
+                    "review_name": "<strong>~ Lara Zoe</strong>",
+                    "review_paragraph": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod nisi id enim pulvinar suscipit. Praesent pretium orci non velit bibendum,</p>",
+                    "alignment": "left",
+                    "number_stars": 3,
+                    "tooth_offset": 32,
+                    "background_color": "#FCF5EA",
+                    "active_star_color": "#000000",
+                    "inactive_star_color": "#a6a6a6",
+                    "tooth_color": "#fcf5ea",
+                    "review_name_font_size": 12,
+                    "review_name_line_height": 14,
+                    "max_width": 361,
+                    "margin_bottom": 0,
+                    "margin_top": 0,
+                    "margin_left": 32,
+                    "margin_right": 0
+                }
+            },
+            {
+                "type": "review",
+                "settings": {
+                    "reviewer_image": "shopify://shop_images/c6e153d196d1885f635171d36a061dc5.png",
+                    "image_position": "top",
+                    "review_name": "<strong>~ Franklin Jackson </strong>",
+                    "review_paragraph": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod nisi id enim pulvinar suscipit. Praesent pretium orci non velit bibendum,</p>",
+                    "alignment": "left",
+                    "number_stars": 3,
+                    "tooth_offset": 32,
+                    "background_color": "#FCF5EA",
+                    "active_star_color": "#000000",
+                    "inactive_star_color": "#a6a6a6",
+                    "tooth_color": "#fcf5ea",
+                    "review_name_font_size": 12,
+                    "review_name_line_height": 14,
+                    "max_width": 361,
+                    "margin_bottom": 0,
+                    "margin_top": 62,
+                    "margin_left": 32,
+                    "margin_right": 32
+                }
+            },
+            {
+                "type": "review",
+                "settings": {
+                    "reviewer_image": "shopify://shop_images/c6e153d196d1885f635171d36a061dc5.png",
+                    "image_position": "bottom",
+                    "review_name": "<strong>~ Jane Klien</strong>",
+                    "review_paragraph": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod nisi id enim pulvinar suscipit. Praesent pretium orci non velit bibendum,</p>",
+                    "alignment": "left",
+                    "number_stars": 3,
+                    "tooth_offset": 32,
+                    "background_color": "#F6F7D4",
+                    "active_star_color": "#000000",
+                    "inactive_star_color": "#a6a6a6",
+                    "tooth_color": "#fcf5ea",
+                    "review_name_font_size": 12,
+                    "review_name_line_height": 14,
+                    "max_width": 361,
+                    "margin_bottom": 8,
+                    "margin_top": 27,
+                    "margin_left": 32,
+                    "margin_right": 32
+                }
+            }
+            ]
+        }
+    ]
+}
+{% endschema %}

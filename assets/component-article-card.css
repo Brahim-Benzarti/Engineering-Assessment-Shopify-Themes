@@ -21,6 +21,14 @@
   display: block;
 }
 
+.card__media .media.article-card__image img {
+  object-position: var(--object-horizontal-alignment) var(--object-vertical-alignment);
+}
+
+.article-card__image-wrapper {
+  background-color: rgba(0,0,0,0.3)
+}
+
 .article-card__title {
   text-decoration: none;
   word-break: break-word;

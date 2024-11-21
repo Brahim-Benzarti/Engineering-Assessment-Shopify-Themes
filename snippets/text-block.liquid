@@ -1,0 +1,66 @@
+{% comment %}
+    Text block
+    Variables:
+        block: The text block { Block }
+        text: The text { String }
+        alignment: The text alignment { String }
+        normal_text_color: The normal text color { String }
+        hover_text_color: The hover text color { String }
+        margin_top: The margin top { Number }
+        margin_bottom: The margin bottom { Number }
+        type: The text block type { String }
+{% endcomment %}
+{% liquid
+    assign text = text | default: block.settings.text
+    assign alignment = alignment | default: block.settings.text_alignment | default: 'left'
+    assign normal_text_color = normal_text_color | default: block.settings.text_normal_state_color
+    assign hover_text_color = hover_text_color | default: block.settings.text_hover_state_color
+    assign margin_top = margin_top | default: block.settings.margin_top | default: 0
+    assign margin_bottom = margin_bottom | default: block.settings.margin_bottom | default: 0
+    assign max_width = max_width | default: block.settings.max_width | default: "100%"
+
+    assign alignment_mobile = alignment_mobile | default: block.settings.text_alignment_mobile
+    assign normal_text_color_mobile = normal_text_color_mobile | default: block.settings.text_normal_state_color_mobile
+    assign hover_text_color_mobile = hover_text_color_mobile | default: block.settings.text_hover_state_color_mobile
+    assign margin_top_mobile = margin_top_mobile | default: block.settings.margin_top_mobile
+    assign margin_bottom_mobile = margin_bottom_mobile | default: block.settings.margin_bottom_mobile
+    assign max_width_mobile = max_width_mobile | default: block.settings.max_width_mobile
+
+    assign type = type | default: block.settings.type
+%}
+
+{% style %}
+    #text-block-{{ block.id }} {
+        --text-alignment: {{ alignment }};
+        --text-color-normal: {{ normal_text_color }};
+        --text-color-hover: {{ hover_text_color }};
+        --margin-bottom: {{ margin_bottom }}px;
+        --margin-top: {{ margin_top }}px;
+        --max-width: {{ max_width }}px;
+
+        max-width: var(--max-width);
+        text-align: var(--text-alignment);
+        color: var(--text-color-normal);
+        margin-bottom: var(--margin-bottom);
+        margin-top: var(--margin-top);
+    }
+
+    #text-block-{{ block.id }}:hover {
+        color: var(--text-color-hover);
+    }
+
+    @media screen and (max-width: 749px) {
+        #text-block-{{ block.id }} {
+            --text-alignment: {{ alignment_mobile }};
+            --text-color-normal: {{ normal_text_color_mobile  }};
+            --text-color-hover: {{ hover_text_color_mobile  }};
+            --margin-bottom: {{ margin_bottom_mobile  }}px;
+            --margin-top: {{ margin_top_mobile  }}px;
+            --max-width: {{ max_width_mobile  }}px;
+        }
+    }
+{% endstyle %}
+
+<div id="text-block-{{ block.id }}" class="text-block {{ type }}" {{ block.shopify_attributes }}>
+  {{ text }}
+</div> 
